@@ -6,6 +6,7 @@ import { HomeGuard } from '@app/guards/home.guard';
 
 import { HeaderComponent } from '@app/shared/header/header.component';
 import { FooterComponent } from '@app/shared/footer/footer.component';
+import { DataGridPageComponent } from './test-screens/data-grid-page/data-grid-page.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
         component: FooterComponent
       }
     ]
+  },
+  {
+    path: 'data-grid',
+    component: DataGridPageComponent
   }
 ];
 

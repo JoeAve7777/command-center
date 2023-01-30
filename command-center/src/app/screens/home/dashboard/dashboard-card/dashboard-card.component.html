@@ -1,0 +1,29 @@
+<p-card class="card p-2 mb-2">
+    <div class="p-card-body">
+        <div class="p-card-title">
+            <i class="fa {{dashboardCardItem.iconClass}} fa-2x mr-3" aria-hidden="true" ></i>{{dashboardCardItem.label}}
+            <span style="float:right; cursor: pointer; font-weight: bold;">
+                <i class="fa fa-expand fa-lg mr-3" aria-hidden="true" *ngIf="hasExpandedRoute" (click)="onExpandClick()"></i>
+                <i class="fa fa-times fa-lg" aria-hidden="true" (click)="onClick()"></i>
+            </span>
+        </div>
+    </div>
+    <br />
+    <div [ngSwitch]="dashboardCardItem.id">
+        <div *ngSwitchCase="'1'">
+            <app-data-grid-widget [dashboardCardItem]="dashboardCardItem"></app-data-grid-widget>
+        </div>
+        <div *ngSwitchCase="'2'">
+            <app-bar-chart-widget [dashboardCardItem]="dashboardCardItem"></app-bar-chart-widget>
+        </div>
+        <div *ngSwitchCase="'3'">
+            <app-line-chart-widget [dashboardCardItem]="dashboardCardItem"></app-line-chart-widget>
+        </div>        
+        <div *ngSwitchDefault>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
+                quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
+        </div>
+
+    </div>
+
+</p-card>
