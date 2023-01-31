@@ -1,3 +1,9 @@
-<div style="height: 50px;padding: 10px;margin-top: 10px;" class="card shadow-sm" (click)="onClick()" #dtn>
-    <div><i class="fa {{thumbnail.iconClass}} fa-lg mr-2" aria-hidden="true"></i>{{thumbnail.label}}</div>
-</div>    
+<div
+    style="height: 50px; padding: 10px; margin-top: 10px"
+    class="card shadow-sm"
+    (click)="onClick()"
+    #dtn
+>
+    <i class="fa {{ thumbnail.iconClass }} fa-lg mr-2" aria-hidden="true"></i>
+    <div style="margin-top: 3px">{{ thumbnail.label }}</div>
+</div>
