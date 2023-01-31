@@ -31,12 +31,14 @@ export class DashboardCardComponent implements OnInit {
 
     onExpandClick() {
 
-        if (!!this.dashboardCardItem.expandedRoute) {
-            this.router.navigate(
-                [this.dashboardCardItem.expandedRoute],
-                { replaceUrl: true, skipLocationChange: true }
-            );
-        }
+        // if (!!this.dashboardCardItem.expandedRoute) {
+        //     this.router.navigate(
+        //         [this.dashboardCardItem.expandedRoute],
+        //         { replaceUrl: true, skipLocationChange: true }
+        //     );
+        // }
+
+        this.dashboardCardItemService.broadcastDashboardCardExpandRequestedEvent(this.dashboardCardItem);
 
     }
 }

@@ -9,6 +9,7 @@ export class DashboardCardItemService {
 
     private dashboardCardItemSelected: Subject<DashboardCardItem> = new Subject<DashboardCardItem>();
     private dashboardCardItemRemoved: Subject<DashboardCardItem> = new Subject<DashboardCardItem>();
+    private dashboardCardExpandRequested: Subject<DashboardCardItem> = new Subject<DashboardCardItem>();
 
     constructor() { 
       
@@ -57,6 +58,28 @@ export class DashboardCardItemService {
             }
 
         });
+    }    
+
+    public broadcastDashboardCardExpandRequestedEvent(dashboardCardItem: DashboardCardItem): void
+    {
+       // if (this.dashboardCardExpandRequested.value !== dashboardCardItem)
+       // {
+            this.dashboardCardExpandRequested.next(dashboardCardItem);
+       // }
+        
     }
+
+    public subscribeToDashboardCardExpandRequestedEvent(self: any, callback: Function): Subscription
+    {
+        return this.dashboardCardExpandRequested.subscribe((dashboardCardItem: DashboardCardItem): void =>
+        {
+
+            if (!!callback)
+            {
+                callback(self, dashboardCardItem);
+            }
+
+        });
+    }    
 
 }
