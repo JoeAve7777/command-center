@@ -1,14 +1,28 @@
-<pbds-page-title
+<!-- <pbds-page-title
   ttl="Available Server List"
   layout="container"
-></pbds-page-title>
+></pbds-page-title> -->
 
 <!--  mt-7 class on container, unless the first element inside is an H2 -->
-<div class="container mt-7">
-  <div class="row">
-    <div class="col">
-   
+<div class="tool-bar">
+    <div class="row">
+        <div class="col-12">     
+            <app-dashboard-thumbnail-list [thumbnailItems]="dashboardCardItems"></app-dashboard-thumbnail-list>      
+        </div>
     </div>
-  </div>
 </div>
 
+
+<div style="padding: 1rem;">
+    <!-- <div class="row">
+        <div class="col-12">            
+            <app-dashboard-thumbnail-list [thumbnailItems]="dashboardCardItems"></app-dashboard-thumbnail-list>      
+        </div>
+    </div> -->
+    <div class="row">
+        <div class="col-12">
+            <app-dashboard-card-list></app-dashboard-card-list>
+        </div>
+    </div>     
+    
+</div>
