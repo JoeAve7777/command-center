@@ -19,6 +19,7 @@ export class DashboardThumbnailComponent implements OnDestroy, OnInit {
     }
 
     onClick() {
+
         this.showDisabled();
         this.dashboardCardItemService.broadcastDashboardCardItemSelectedEvent(this.thumbnail);    
     }
