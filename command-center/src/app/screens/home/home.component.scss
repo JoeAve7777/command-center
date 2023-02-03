@@ -3,8 +3,13 @@
     margin-left: 15px;
     padding: 4px;
     width:98%;
-    height: 100px;
+    height: auto;
     overflow-x: hidden;
     overflow-y: hidden;
     white-space: nowrap;
+}
+
+.shim
+{
+    height: 5px
 }
