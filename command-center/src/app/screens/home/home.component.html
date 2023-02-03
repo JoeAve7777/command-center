@@ -1,56 +1,64 @@
-<div class="main-page" style="margin-top: 4.3rem; padding: 5px">
-    <div class="row">
-        <div class="col-12 shim" (mouseenter)="onDummyMouseEnter()"></div>
-    </div>
-
-    <div
-        class="row"  style="padding-left: 5px; padding-right: 5px"
-        [ngStyle]="{
-            display:
-                showExpandedVersion === false && showSideBar === true
-                    ? 'block'
-                    : 'none'
-        }"
-    >
-        <div class="col-12">
-            <app-dashboard-thumbnail-list
-                [thumbnailItems]="dashboardCardItems"
-            ></app-dashboard-thumbnail-list>
-        </div>
-    </div>
-
-    <div
-        (mouseenter)="onCardListMouseEnter()"
-        [ngStyle]="{
-            display: showExpandedVersion === false ? 'block' : 'none'
-        }"
-        style="padding: 1rem"
-    >
+<div
+    class="row"
+    style="margin-top: 4.3rem; padding: 5px; height: auto; width: 100%"
+>
+    <div class="col-12">
         <div class="row">
-            <div class="col-12">
-                <app-dashboard-card-list></app-dashboard-card-list>
-            </div>
+            <div class="col-12 shim" (mouseenter)="onShimMouseEnter()"></div>
         </div>
-    </div>
 
-    <div
-        [ngStyle]="{ display: showExpandedVersion === true ? 'block' : 'none' }"
-    >
-        <h1>Expanded</h1>
-        <div [ngSwitch]="expandedId">
-            <div *ngSwitchCase="'1'">
-                <app-data-grid-widget
-                    [dashboardCardItem]="dashboardCardItem"
-                ></app-data-grid-widget>
-            </div>
-            <div *ngSwitchDefault>NOT SURE WHAT TO SHOW</div>
-        </div>
-        <button
-            type="button"
-            class="btn btn-primary"
-            (click)="closeExpandedWindow()"
+        <div
+            class="row"
+            style="padding-left: 5px; padding-right: 5px"
+            [ngStyle]="{
+                display:
+                    showExpandedVersion === false && showSideBar === true
+                        ? 'block'
+                        : 'none'
+            }"
         >
-            Close
-        </button>
+            <div class="col-12">
+                <app-dashboard-thumbnail-list
+                    [thumbnailItems]="dashboardCardItems"
+                ></app-dashboard-thumbnail-list>
+            </div>
+        </div>
+
+        <div
+            (mouseenter)="onCardListMouseEnter()"
+            [ngStyle]="{
+                display: showExpandedVersion === false ? 'block' : 'none'
+            }"
+            style="padding: 1rem"
+        >
+            <div class="row">
+                <div class="col-12">
+                    <app-dashboard-card-list></app-dashboard-card-list>
+                </div>
+            </div>
+        </div>
+
+        <div
+            [ngStyle]="{
+                display: showExpandedVersion === true ? 'block' : 'none'
+            }"
+        >
+            <h1>Expanded</h1>
+            <div [ngSwitch]="expandedId">
+                <div *ngSwitchCase="'1'">
+                    <app-data-grid-widget
+                        [dashboardCardItem]="dashboardCardItem"
+                    ></app-data-grid-widget>
+                </div>
+                <div *ngSwitchDefault>NOT SURE WHAT TO SHOW</div>
+            </div>
+            <button
+                type="button"
+                class="btn btn-primary"
+                (click)="closeExpandedWindow()"
+            >
+                Close
+            </button>
+        </div>
     </div>
 </div>

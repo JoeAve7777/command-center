@@ -21,7 +21,7 @@ export class HomeComponent implements OnDestroy, OnInit {
         this.showSideBar = false;
     }
 
-    onDummyMouseEnter() {
+    onShimMouseEnter() {
         this.showSideBar = true;
     }
 
