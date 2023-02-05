@@ -18,7 +18,10 @@ export class HomeComponent implements OnDestroy, OnInit {
     pageMouseState = "";
 
     onCardListMouseEnter() {
-        this.showSideBar = false;
+
+        //this should be false
+        //this.showSideBar = false;
+        this.showSideBar = true;
     }
 
     onShimMouseEnter() {
